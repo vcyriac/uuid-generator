@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from "react"
 import './App.css';
 
 function App() {
+  const [uuid, setUUID] = React.useState(0)
+  function getUUID() {
+      let u = uuid4();
+      setUUID(u);
+  }
+  function uuid4() {
+      return ( crypto.randomUUID());
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="modal-form App-header">
+          <div className="counter--count">
+              <h2>UUID</h2>
+              <h1>{uuid}</h1>
+          </div>
+          
+      </div>
+      <span className="uuid-btn" onClick={getUUID}></span>
     </div>
   );
 }

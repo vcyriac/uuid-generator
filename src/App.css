@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.modal-form{
+	position: relative;
+}
+.uuid-btn{
+	position: absolute;
+	transition: transform .25s, opacity .25s;
+	opacity: .7;
+	cursor: pointer;
+	font-size: 3em;
+	font-family: serif;
+	line-height: 1;
+}
+.uuid-btn:before{
+	content: "\203B";
+}
+.uuid-btn:hover{
+	opacity: 1;
+	transform: rotate(90deg);
+    background-color: pink;
+}
+.counter--count{
+    background-color: pink;
 }
